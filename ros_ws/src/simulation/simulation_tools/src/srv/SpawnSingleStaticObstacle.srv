@@ -1,0 +1,9 @@
+float32 distance                # Distance from car
+
+float32 shift                   # Left/Right shift. Negative values go to the left, positive to the right
+
+bool shift_relative_to car      # If false, shift is relative to the middle of the track.
+                                # If true, shift is relative to the car.
+                                # Defaults to false.
+---
+# No reply

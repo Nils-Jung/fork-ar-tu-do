@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   gazebo_msgs
+  message_generation
 )
 
 find_package(gazebo REQUIRED)
@@ -19,6 +20,11 @@ set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wchar-subscripts -Wchkp
 # -Wpedantic cant be used because of ROS
 
 catkin_python_setup()
+
+add_service_files(
+  FILES
+  SpawnSingleStaticObstacle.srv
+)
 
 ###################################
 ## catkin specific configuration ##
