@@ -1,4 +1,5 @@
 - git: {local-name: ar-tu-do-core,              version: master,        uri: 'https://github.com/Nils-Jung/fork-ar-tu-do-core.git'}
 - git: {local-name: ar-tu-do-autonomous,        version: master,        uri: 'https://github.com/Nils-Jung/fork-ar-tu-do-autonomous.git'}
 - git: {local-name: ar-tu-do-simulation,        version: master,        uri: 'https://github.com/Nils-Jung/fork-ar-tu-do-simulation.git'}
+- git: {local-name: vesc,                       version: master,        uri: 'https://github.uconn.edu/ret15108/vesc'}
 - git: {local-name: particle_filter,            version: master,        uri: 'https://github.com/Autonomous-Racing-PG/particle_filter.git'}
