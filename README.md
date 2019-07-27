@@ -45,16 +45,19 @@ cd range_libc/pywrapper
 ./compile_with_cuda.sh  # on car - compiles GPU ray casting methods
 ```
 
-Clone the repository:
+Setup the repository:
 
 ```bash
-git clone --recurse-submodules https://github.com/Autonomous-Racing-PG/ros.package
+git clone https://github.com/Nils-Jung/fork-ar-tu-do.git
+cd ros.package
+mkdir -p ros_ws/src
+wstool init ros_ws/src racer_simulation.rosinstall # (or racer_hardware.rosinstall)
 ```
 
 Install missing ROS dependencies:
 
 ```bash
-cd ros.package/ros_ws
+cd ros_ws
 rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO}
 ```
 
