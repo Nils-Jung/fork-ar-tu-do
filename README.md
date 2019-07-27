@@ -48,8 +48,8 @@ cd range_libc/pywrapper
 Setup the repository:
 
 ```bash
-git clone https://github.com/Nils-Jung/fork-ar-tu-do.git
-cd ros.package
+git clone https://github.com/Nils-Jung/fork-ar-tu-do.git fork-ar-tu-do
+cd fork-ar-tu-do
 mkdir -p ros_ws/src
 wstool init ros_ws/src racer_simulation.rosinstall # (or racer_hardware.rosinstall)
 ```
