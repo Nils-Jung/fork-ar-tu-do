@@ -6,9 +6,9 @@ env:
   global:
     - SRC_PATH=$(pwd)
     - ROS_DISTRO: kinetic
-    - GH_REPO_NAME: ros.package
+    - GH_REPO_NAME: fork-ar-tu-do
     - DOXYFILE: $TRAVIS_BUILD_DIR/docs/master/Doxyfile
-    - GH_REPO_REF: github.com/Autonomous-Racing-PG/ros.package.git
+    - GH_REPO_REF: github.com/Nils-Jung/fork-ar-tu-do.git
 
 jobs:
   include:
@@ -29,7 +29,6 @@ jobs:
           ccache: true      
 
       before_install:
-        - cd ros_ws
         - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
         - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
         - sudo apt-get update -qq
@@ -39,8 +38,9 @@ jobs:
         - rosdep update
 
       before_script:
-        - wstool init
-        - wstool up
+        - mkdir -p ros_ws/src
+        - wstool init ros_ws/src racer_simulation.rosinstall
+        - cd ros_ws
         - source /opt/ros/${ROS_DISTRO}/setup.bash
         - rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO}
         - sudo pip install autopep8
